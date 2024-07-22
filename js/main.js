@@ -1,8 +1,10 @@
-const activity ={
-    name:'Almoço',
-    data: new Date("2024-07-20  06:26"),
-    finalizada: true
-}
+// const activity ={
+//     name:'Almoço',
+//     data: new Date("2024-07-20  06:26"),
+//     finalizada: true
+// }
+
+
 const criarItems= (activity)=> {
     let input = '<input type="checkbox" '
 
@@ -24,7 +26,22 @@ const criarItems= (activity)=> {
 }
 
 const list = document.querySelector('.list');
-list.innerHTML = criarItems(activity);
+
+let activitys = [
+    {
+        name:'Almoço',
+        data: new Date("2024-07-20  06:26"),
+        finalizada: true
+    },
+    {
+        name: 'Jantar',
+        data: new Date("2024-08-17 19:05"),
+        finalizada: false
+    },
+]
+for(let activity of activitys){
+    list.innerHTML += criarItems(activity);
+}
 
 // sábado, dia 18 às 08:00
 // Academia em grupo
