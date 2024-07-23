@@ -1,8 +1,25 @@
-// const activity ={
-//     name:'Almoço',
-//     data: new Date("2024-07-20  06:26"),
-//     finalizada: true
-// }
+const activity ={
+    name:'Matabicho',
+    data: new Date("2025-03-21  07:08"),
+    finalizada: false
+}
+
+let activitys = [
+    activity,
+    {
+        name:'Almoço',
+        data: new Date("2024-07-20  06:26"),
+        finalizada: true
+    },
+    {
+        name: 'Jantar',
+        data: new Date("2024-08-17 19:05"),
+        finalizada: false
+    },
+]
+
+
+// activitys = [];
 
 
 const criarItems= (activity)=> {
@@ -27,21 +44,20 @@ const criarItems= (activity)=> {
 
 const list = document.querySelector('.list');
 
-let activitys = [
-    {
-        name:'Almoço',
-        data: new Date("2024-07-20  06:26"),
-        finalizada: true
-    },
-    {
-        name: 'Jantar',
-        data: new Date("2024-08-17 19:05"),
-        finalizada: false
-    },
-]
-for(let activity of activitys){
-    list.innerHTML += criarItems(activity);
+let updateList = () => {
+    if(activitys.length == 0){
+        list.innerHTML = `<p>Nenhuma actividade cadastrada</p>`;
+        return;
+    }
+
+    for(let activity of activitys){
+        list.innerHTML += criarItems(activity);
+    }
 }
 
-// sábado, dia 18 às 08:00
-// Academia em grupo
+updateList();
+
+//Formatação da data
+let formatDate=(data)=>{
+    
+}
